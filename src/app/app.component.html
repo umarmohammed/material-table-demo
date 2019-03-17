@@ -1,10 +1,18 @@
-<select
-  [ngModel]="selectedSize$ | async"
-  (ngModelChange)="onSelectionChange($event)"
->
-  <option *ngFor="let dataSize of dataSizes" [value]="dataSize">{{
-    dataSize
-  }}</option>
-</select>
+<div>
+  <label>Data size</label>
+  <select
+    [ngModel]="selectedSize$ | async"
+    (ngModelChange)="onSelectionChange($event)"
+  >
+    <option *ngFor="let dataSize of dataSizes" [value]="dataSize">{{
+      dataSize
+    }}</option>
+  </select>
+</div>
 
-<app-demo-mat-table [data]="data$ | async"></app-demo-mat-table>
+<nav>
+  <a [routerLink]="['material-table']">Material table</a> |
+  <a [routerLink]="['cdk-scroll']">CDK Scroll</a>
+</nav>
+
+<router-outlet></router-outlet>
