@@ -14,7 +14,7 @@ export class AppComponent {
 
   constructor(private store: Store, private dataService: DataService) {}
 
-  onSelectionChange(value: number) {
-    this.dataService.setDataSize(value);
+  onSelectionChange(value: string) {
+    this.dataService.setDataSize(Number.parseInt(value));
   }
 }
