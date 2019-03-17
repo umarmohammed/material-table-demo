@@ -297,7 +297,7 @@ MIT
 @angular/platform-browser
 MIT
 
-@angular/forms
+@angular/router
 MIT
 
 @angular/cdk
@@ -326,6 +326,11 @@ THE SOFTWARE.
 
 
 @angular/material/table
+
+@angular/forms
+MIT
+
+@angular/cdk/scrolling
 
 @angular/animations
 MIT
