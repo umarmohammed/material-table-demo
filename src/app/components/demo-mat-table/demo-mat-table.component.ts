@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { getColumnNames } from 'src/app/util/data-utils';
 import { MatTableDataSource } from '@angular/material/table';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-demo-mat-table',
@@ -9,7 +10,7 @@ import { MatTableDataSource } from '@angular/material/table';
 })
 export class DemoMatTableComponent implements OnInit {
   @Input()
-  data: any[];
+  data$: Observable<any[]>;
 
   dataSource = new MatTableDataSource();
 
@@ -18,7 +19,7 @@ export class DemoMatTableComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
-    this.dataSource.data = this.data;
+    this.data$.subscribe(data => (this.dataSource.data = data));
   }
 
   applyFilter(filterValue: string) {

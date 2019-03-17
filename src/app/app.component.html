@@ -1,1 +1,10 @@
-<app-demo-mat-table [data]="data$ | async"></app-demo-mat-table>
+<select
+  [ngModel]="selectedSize$ | async"
+  (ngModelChange)="onSelectionChange($event)"
+>
+  <option *ngFor="let dataSize of dataSizes" [value]="dataSize">{{
+    dataSize
+  }}</option>
+</select>
+
+<app-demo-mat-table [data$]="data$"></app-demo-mat-table>

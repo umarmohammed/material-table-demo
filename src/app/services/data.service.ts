@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
-import { delay } from 'rxjs/operators';
 import { generateDataArray } from '../util/data-utils';
+import { Store } from '../store/store';
 
 @Injectable({ providedIn: 'root' })
 export class DataService {
-  numData = 10000;
+  constructor(private store: Store) {}
 
-  getData(): Observable<any[]> {
-    return of(generateDataArray(this.numData)).pipe(delay(1000));
+  setDataSize(dataSize: number) {
+    this.store.set('dataSize', dataSize);
+    const data = generateDataArray(dataSize);
+    this.store.set('data', data);
   }
 }
