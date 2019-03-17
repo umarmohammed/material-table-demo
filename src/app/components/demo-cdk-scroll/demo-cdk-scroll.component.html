@@ -1,0 +1,33 @@
+<input [(ngModel)]="filterValue" />
+<button (click)="applyFilter()">
+  search
+</button>
+<cdk-virtual-scroll-viewport class="example-viewport" itemSize="0">
+  <table style="width: 100%;">
+    <ng-container *cdkVirtualFor="let row of filterData">
+      <tr style="width:100%; min-height: 30px;">
+        <td>{{ row.id }}</td>
+        <td>{{ row.column1 }}</td>
+        <td>{{ row.column2 }}</td>
+        <td>{{ row.column3 }}</td>
+        <td>{{ row.column4 }}</td>
+        <td>{{ row.column5 }}</td>
+        <td>{{ row.column6 }}</td>
+        <td>{{ row.column7 }}</td>
+        <td>{{ row.column8 }}</td>
+        <td>{{ row.column9 }}</td>
+        <td>{{ row.column10 }}</td>
+        <td>{{ row.column11 }}</td>
+        <td>{{ row.column12 }}</td>
+        <td>{{ row.column13 }}</td>
+        <td>{{ row.column14 }}</td>
+        <td>{{ row.column15 }}</td>
+        <td>{{ row.column16 }}</td>
+        <td>{{ row.column17 }}</td>
+        <td>{{ row.column18 }}</td>
+        <td>{{ row.column19 }}</td>
+        <td>{{ row.column20 }}</td>
+      </tr>
+    </ng-container>
+  </table>
+</cdk-virtual-scroll-viewport>

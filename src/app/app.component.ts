@@ -9,7 +9,6 @@ import { Store } from './store/store';
 })
 export class AppComponent {
   dataSizes = [500, 1000, 2000, 3000, 5000, 10000];
-  data$ = this.store.select('data');
   selectedSize$ = this.store.select('dataSize');
 
   constructor(private store: Store, private dataService: DataService) {}

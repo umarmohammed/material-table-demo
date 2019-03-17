@@ -1,27 +1,26 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { getColumnNames } from 'src/app/util/data-utils';
 import { Store } from 'src/app/store/store';
-import { Observable, Subscription } from 'rxjs';
+import { Subscription } from 'rxjs';
 
 @Component({
-  selector: 'app-demo-mat-table',
-  templateUrl: './demo-mat-table.component.html',
-  styleUrls: ['./demo-mat-table.component.scss']
+  selector: 'app-demo-cdk-scroll',
+  templateUrl: './demo-cdk-scroll.component.html',
+  styleUrls: ['./demo-cdk-scroll.component.scss']
 })
-export class DemoMatTableComponent implements OnInit, OnDestroy {
+export class DemoCdkScrollComponent implements OnInit, OnDestroy {
+  displayedColumns = getColumnNames();
   data: any[];
   filterData: any[];
-
-  displayedColumns = getColumnNames();
-  filterValue = '';
   dataSub: Subscription;
+  filterValue = '';
 
   constructor(private store: Store) {}
 
   ngOnInit() {
     this.dataSub = this.store.select('data').subscribe(d => {
       this.data = d;
-      this.filterData = d;
+      this.filterData = this.data;
     });
   }
 
