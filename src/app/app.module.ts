@@ -8,6 +8,7 @@ import { MatTableModule } from '@angular/material/table';
 import { DemoMatTableComponent } from './components/demo-mat-table/demo-mat-table.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [AppComponent, DemoMatTableComponent],
@@ -16,7 +17,8 @@ import { MatInputModule } from '@angular/material/input';
     BrowserAnimationsModule,
     MatTableModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

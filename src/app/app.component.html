@@ -1,1 +1,13 @@
-<app-demo-mat-table [data]="data$ | async"></app-demo-mat-table>
+<mat-form-field>
+  <mat-select
+    placeholder="Data Size"
+    [value]="selectedSize$ | async"
+    (selectionChange)="onSelectionChange($event.value)"
+  >
+    <mat-option *ngFor="let dataSize of dataSizes" [value]="dataSize">
+      {{ dataSize }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+<app-demo-mat-table [data$]="data$"></app-demo-mat-table>

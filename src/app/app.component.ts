@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { DataService } from './services/data.service';
-import { getColumnNames } from './util/data-utils';
+import { Store } from './store/store';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +8,13 @@ import { getColumnNames } from './util/data-utils';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  data$ = this.dataService.getData();
+  dataSizes = [500, 1000, 2000, 3000, 5000, 10000];
+  data$ = this.store.select('data');
+  selectedSize$ = this.store.select('dataSize');
 
-  constructor(private dataService: DataService) {}
+  constructor(private store: Store, private dataService: DataService) {}
+
+  onSelectionChange(value: number) {
+    this.dataService.setDataSize(value);
+  }
 }
