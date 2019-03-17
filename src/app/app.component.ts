@@ -9,7 +9,6 @@ import { getColumnNames } from './util/data-utils';
 })
 export class AppComponent {
   data$ = this.dataService.getData();
-  displayedColumns = getColumnNames();
 
   constructor(private dataService: DataService) {}
 }
