@@ -1,6 +1,6 @@
 # MaterialTableDemo
 
-Live demo https://umarmohammed.github.io/material-table/
+Live demo https://umarmohammed.github.io/material-table-demo/
 
 ## Material Table
 
