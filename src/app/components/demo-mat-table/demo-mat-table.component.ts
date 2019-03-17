@@ -1,28 +1,45 @@
-import { Component, OnInit, Input } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Input,
+  OnChanges,
+  SimpleChanges,
+  ChangeDetectionStrategy
+} from '@angular/core';
 import { getColumnNames } from 'src/app/util/data-utils';
 import { MatTableDataSource } from '@angular/material/table';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-demo-mat-table',
   templateUrl: './demo-mat-table.component.html',
-  styleUrls: ['./demo-mat-table.component.scss']
+  styleUrls: ['./demo-mat-table.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class DemoMatTableComponent implements OnInit {
+export class DemoMatTableComponent implements OnInit, OnChanges {
   @Input()
-  data$: Observable<any[]>;
+  data: any[];
 
   dataSource = new MatTableDataSource();
-
   displayedColumns = getColumnNames();
+  filterValue = '';
+  filterData = this.data;
 
   constructor() {}
 
   ngOnInit() {
-    this.data$.subscribe(data => (this.dataSource.data = data));
+    this.filterData = this.data;
+    this.dataSource.data = this.filterData;
   }
 
-  applyFilter(filterValue: string) {
-    this.dataSource.filter = filterValue.trim().toLowerCase();
+  ngOnChanges(changes: SimpleChanges) {
+    this.filterData = this.data;
+    this.filterValue = '';
+  }
+
+  applyFilter() {
+    this.filterData = this.data.filter(d => {
+      const values = Object.values(d).join('');
+      return values.includes(this.filterValue);
+    });
   }
 }
