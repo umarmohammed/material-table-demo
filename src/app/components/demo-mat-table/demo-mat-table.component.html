@@ -1,0 +1,142 @@
+<mat-form-field>
+  <input
+    matInput
+    (keyup)="applyFilter($event.target.value)"
+    placeholder="Filter"
+  />
+</mat-form-field>
+<div class="example-container mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource">
+    <!--- Note that these columns can be defined in any order.
+                The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- Id Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef>No.</th>
+      <td mat-cell *matCellDef="let data">{{ data.id }}</td>
+    </ng-container>
+
+    <!-- Column 1 -->
+    <ng-container matColumnDef="column1">
+      <th mat-header-cell *matHeaderCellDef>Column 1</th>
+      <td mat-cell *matCellDef="let data">{{ data.column1 }}</td>
+    </ng-container>
+
+    <!-- Column 2 -->
+    <ng-container matColumnDef="column2">
+      <th mat-header-cell *matHeaderCellDef>Column 2</th>
+      <td mat-cell *matCellDef="let data">{{ data.column2 }}</td>
+    </ng-container>
+
+    <!-- Column 3 -->
+    <ng-container matColumnDef="column3">
+      <th mat-header-cell *matHeaderCellDef>Column 3</th>
+      <td mat-cell *matCellDef="let data">{{ data.column3 }}</td>
+    </ng-container>
+
+    <!-- Column 4 -->
+    <ng-container matColumnDef="column4">
+      <th mat-header-cell *matHeaderCellDef>Column 4</th>
+      <td mat-cell *matCellDef="let data">{{ data.column4 }}</td>
+    </ng-container>
+
+    <!-- Column 5 -->
+    <ng-container matColumnDef="column5">
+      <th mat-header-cell *matHeaderCellDef>Column 5</th>
+      <td mat-cell *matCellDef="let data">{{ data.column5 }}</td>
+    </ng-container>
+
+    <!-- Column 6 -->
+    <ng-container matColumnDef="column6">
+      <th mat-header-cell *matHeaderCellDef>Column 6</th>
+      <td mat-cell *matCellDef="let data">{{ data.column6 }}</td>
+    </ng-container>
+
+    <!-- Column 7 -->
+    <ng-container matColumnDef="column7">
+      <th mat-header-cell *matHeaderCellDef>Column 7</th>
+      <td mat-cell *matCellDef="let data">{{ data.column7 }}</td>
+    </ng-container>
+
+    <!-- Column 8 -->
+    <ng-container matColumnDef="column8">
+      <th mat-header-cell *matHeaderCellDef>Column 8</th>
+      <td mat-cell *matCellDef="let data">{{ data.column8 }}</td>
+    </ng-container>
+
+    <!-- Column 9 -->
+    <ng-container matColumnDef="column9">
+      <th mat-header-cell *matHeaderCellDef>Column 9</th>
+      <td mat-cell *matCellDef="let data">{{ data.column9 }}</td>
+    </ng-container>
+
+    <!-- Column 10 -->
+    <ng-container matColumnDef="column10">
+      <th mat-header-cell *matHeaderCellDef>Column 10</th>
+      <td mat-cell *matCellDef="let data">{{ data.column10 }}</td>
+    </ng-container>
+
+    <!-- Column 11 -->
+    <ng-container matColumnDef="column11">
+      <th mat-header-cell *matHeaderCellDef>Column 11</th>
+      <td mat-cell *matCellDef="let data">{{ data.column11 }}</td>
+    </ng-container>
+
+    <!-- Column 12 -->
+    <ng-container matColumnDef="column12">
+      <th mat-header-cell *matHeaderCellDef>Column 12</th>
+      <td mat-cell *matCellDef="let data">{{ data.column12 }}</td>
+    </ng-container>
+
+    <!-- Column 13 -->
+    <ng-container matColumnDef="column13">
+      <th mat-header-cell *matHeaderCellDef>Column 13</th>
+      <td mat-cell *matCellDef="let data">{{ data.column13 }}</td>
+    </ng-container>
+
+    <!-- Column 14 -->
+    <ng-container matColumnDef="column14">
+      <th mat-header-cell *matHeaderCellDef>Column 14</th>
+      <td mat-cell *matCellDef="let data">{{ data.column14 }}</td>
+    </ng-container>
+
+    <!-- Column 15 -->
+    <ng-container matColumnDef="column15">
+      <th mat-header-cell *matHeaderCellDef>Column 15</th>
+      <td mat-cell *matCellDef="let data">{{ data.column15 }}</td>
+    </ng-container>
+
+    <!-- Column 16 -->
+    <ng-container matColumnDef="column16">
+      <th mat-header-cell *matHeaderCellDef>Column 16</th>
+      <td mat-cell *matCellDef="let data">{{ data.column16 }}</td>
+    </ng-container>
+
+    <!-- Column 17 -->
+    <ng-container matColumnDef="column17">
+      <th mat-header-cell *matHeaderCellDef>Column 17</th>
+      <td mat-cell *matCellDef="let data">{{ data.column17 }}</td>
+    </ng-container>
+
+    <!-- Column 18 -->
+    <ng-container matColumnDef="column18">
+      <th mat-header-cell *matHeaderCellDef>Column 18</th>
+      <td mat-cell *matCellDef="let data">{{ data.column18 }}</td>
+    </ng-container>
+
+    <!-- Column 19 -->
+    <ng-container matColumnDef="column19">
+      <th mat-header-cell *matHeaderCellDef>Column 19</th>
+      <td mat-cell *matCellDef="let data">{{ data.column19 }}</td>
+    </ng-container>
+
+    <!-- Column 20 -->
+    <ng-container matColumnDef="column20">
+      <th mat-header-cell *matHeaderCellDef>Column 20</th>
+      <td mat-cell *matCellDef="let data">{{ data.column20 }}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+</div>
